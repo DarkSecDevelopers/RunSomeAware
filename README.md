@@ -3,21 +3,22 @@
 <b>Ransomware:</b> type of malware which encrypt all your files.<br>
 <b>Encryption:</b> simple locker which will lock specific files with a key. You can't unlock them without key.<br> 
 <b>Example:</b> Suppose I have data which contains some personal information and also an key. And I encrypt like below:<br>
-<pre><code>
-//Settings...
-data = 10
 
+
+```vba
+//Settings
+data = 10
 key = 20
-//Encryption...
+
+//Encryption
 data + key = 30
 
-//You need 2 variable values to recover 3rd value.
-//Decryption...
+//Decryption
 data = 30 - key 
 data = 10
+//You need 2 variable values to recover 3rd value.
 //You can't recover data without a key.
-</code></pre>
-
+```
 <h2> Features:</h2>
 <ul>
 <li>Tiny around 5--7 KB</li>  
