@@ -5,7 +5,7 @@
 <b>Example:</b> Suppose I have data which contains some personal information and also an key. And I encrypt like below:<br>
 
 
-```vba
+```csharp
 //Settings
 data = 10
 key = 20
