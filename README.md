@@ -61,7 +61,7 @@ You can contribute by using, reporting etc. You are always welcome so never fear
 Someone had made video which has good quality which I didn't hoped. lol. Thanks to him
 He used 
 - file pumper (to increase file size and defender become ddos and prevented scan)
-- compressor (actually your file having alot `00` values so it thats why duplicate characters  compress well)
+- compressor (when file having alot `00` values then duplicate characters compress well)
 
 Visit : https://youtu.be/Ny6RsSataAs
 
