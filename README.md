@@ -56,6 +56,14 @@ First set these all settings in <a href="RunSomeAware.cs">RunSomeAware.cs</a> an
 You can contribute by using, reporting etc. You are always welcome so never fear. 
 <br>Before reporting any bug, verify that it does found on latest release and not listed on <a href="issues">issues</a>.
 </p>
+<h2> Tutorial</h2>
+
+Someone had made video which has good quality which I didn't hoped. lol. Thanks to him
+He used 
+- file pumper (to increase file size and defender become ddos and prevented scan)
+- compressor (actually your file having alot `00` values so it thats why duplicate characters  compress well)
+
+Visit : https://youtu.be/Ny6RsSataAs
 
 <h2> Disclaimer</h2>
 We assume everyone should use it legally. Author and organisation won't be responsible in case of your crime.
