@@ -13,10 +13,10 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       #run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
-      run: ${{env.csc}} RunSomeAware.cs /out:"RunSomeAware_Releases/RunSomeAware.exe" && ${{env.csc}} /out:"RunSomeAware_Releases/Assembly_Changer.exe" RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:"RunSomeAware_Releases/Icon.exe" -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:"RunSomeAware_Releases/Optimize.exe" -optimize+ RunSomeAware.cs   && ${{env.csc4}} /out:"RunSomeAware_Releases/Run_As_Admin.exe" -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
+      run: ${{env.csc}} RunSomeAware.cs && ${{env.csc}} /out:Assembly_Changer.exe RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:Icon.exe -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:Optimize.exe -optimize+ RunSomeAware.cs   && ${{env.csc4}} /out:Run_As_Admin.exe -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
 
     - name: Upload Artifact
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v1.0.0
       with:
-        name: Releases
-        path: "RunSomeAware_Releases"
+       name: Releases
+       path: ../RunSomeAware
