@@ -1,0 +1,12 @@
+on: push
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        version: 12
+    - run: compiler_v2.0.bat
