@@ -10,7 +10,7 @@ jobs:
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat"
+      run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
    
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
