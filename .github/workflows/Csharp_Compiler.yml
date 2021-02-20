@@ -24,5 +24,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-       name: Examples
-       path: Examples
+       name: Releases
+       path: ${{env.GITHUB_WORKSPACE}}
