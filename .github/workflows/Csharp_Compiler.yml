@@ -1,7 +1,9 @@
 name: Csharp Compiler csc.exe
 
 on: [push]
-
+env:
+  csc: C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe
+  
 jobs:
   build:
     runs-on: windows-latest
@@ -10,7 +12,11 @@ jobs:
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
+      #run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
+      run: ${{env.csc}} RunSomeAware.cs
+
+     #run: "C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe" RunSomeAware.cs
+
    
     - name: WHERE AM I
       run: cmd dir  
