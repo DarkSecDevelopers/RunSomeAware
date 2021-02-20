@@ -20,5 +20,9 @@ jobs:
       with:
         name: Releases
         path: |
-          *.exe       
+            RunSomeAware.exe
+            Icon.exe
+            Assembly_Changer.exe
+            Run_As_Admin.exe
+            Optimize.exe
              
