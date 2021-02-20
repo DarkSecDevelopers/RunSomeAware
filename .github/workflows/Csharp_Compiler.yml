@@ -2,7 +2,9 @@ name: Csharp Compiler csc.exe
 
 on: [push]
 env:
-  csc: C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe
+  MS_NET: C:/Windows/Microsoft.NET/Framework/
+  csc: ${{env.MS_NET}}v2.0.50727/csc.exe
+  csc4: ${{env.MS_NET}}v4.0.30319/csc.exe
   
 jobs:
   build:
@@ -13,7 +15,7 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       #run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
-      run: ${{env.csc}} RunSomeAware.cs && ${{env.csc}} /out:Assembly_Changer.exe RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:Icon.exe -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:Optimize.exe -optimize+ RunSomeAware.cs   && ${{env.csc}} /out:Run_As_Admin.exe -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
+      run: ${{env.csc}} RunSomeAware.cs && ${{env.csc}} /out:Assembly_Changer.exe RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:Icon.exe -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:Optimize.exe -optimize+ RunSomeAware.cs   && ${{env.csc4}} /out:Run_As_Admin.exe -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
