@@ -19,5 +19,5 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
        name: Releases
-       path: #RunSomeAware/*.exe
-             ${{env.GITHUB_WORKSPACE}}/*.exe
+       path: *.exe #RunSomeAware/*.exe
+             
