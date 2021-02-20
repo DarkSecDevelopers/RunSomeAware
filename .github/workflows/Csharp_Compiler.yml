@@ -1,10 +1,8 @@
 name: Csharp Compiler csc.exe
-
 on: [push]
 env:
-  MS_NET: C:/Windows/Microsoft.NET/Framework/
-  csc: ${{env.MS_NET}}v2.0.50727/csc.exe
-  csc4: ${{env.MS_NET}}v4.0.30319/csc.exe
+  csc: C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe
+  csc4: C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe
   
 jobs:
   build:
