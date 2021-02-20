@@ -3,7 +3,7 @@ on: [push]
 env:
   csc: C:/Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe
   csc4: C:/Windows/Microsoft.NET/Framework/v4.0.30319/csc.exe
-
+  
 jobs:
   build:
     runs-on: windows-latest
@@ -13,11 +13,10 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       #run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
-      run: ${{env.csc}} RunSomeAware.cs && ${{env.csc}} /out:RunSomeAware_Releases/Assembly_Changer.exe RunSomeAware.cs Examples\Resources\AssemblyInfo.cs && ${{env.csc}} /out:RunSomeAware_Releases/Icon.exe -win32icon:Examples\Resources/icon.ico RunSomeAware.cs && ${{env.csc}} /out:RunSomeAware_Releases/Optimize.exe -optimize+ RunSomeAware.cs && ${{env.csc4}} /out:RunSomeAware_Releases/Run_As_Admin.exe -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
-   
+      run: ${{env.csc}} RunSomeAware.cs /out:"RunSomeAware_Releases/RunSomeAware.exe" && ${{env.csc}} /out:"RunSomeAware_Releases/Assembly_Changer.exe" RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:"RunSomeAware_Releases/Icon.exe" -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:"RunSomeAware_Releases/Optimize.exe" -optimize+ RunSomeAware.cs   && ${{env.csc4}} /out:"RunSomeAware_Releases/Run_As_Admin.exe" -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
+
     - name: Upload Artifact
     - uses: actions/upload-artifact@v2
       with:
         name: Releases
-        path: RunSomeAware_Releases
-             
+        path: "RunSomeAware_Releases"
