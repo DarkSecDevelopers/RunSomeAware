@@ -1,0 +1,19 @@
+name: Csharp Compiler csc.exe
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: "compiler_v2.0.bat"
+   
+    #- name: Upload Artifact
+    #  uses: actions/upload-artifact@v1.0.0
+    #  with:
+    #    name: published_app
+    #    path: GithubFolderDownloader/bin/Release
