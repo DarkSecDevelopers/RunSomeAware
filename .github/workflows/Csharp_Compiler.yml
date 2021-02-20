@@ -20,4 +20,4 @@ jobs:
       with:
        name: Releases
        path: #RunSomeAware/*.exe
-             /*.exe
+             ${{env.GITHUB_WORKSPACE}}/*.exe
