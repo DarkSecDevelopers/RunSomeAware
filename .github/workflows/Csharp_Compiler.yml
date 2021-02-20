@@ -10,7 +10,7 @@ jobs:
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: "compiler_v2.0.bat"
+      run: cmd.exe "compiler_v2.0.bat"
    
     #- name: Upload Artifact
     #  uses: actions/upload-artifact@v1.0.0
