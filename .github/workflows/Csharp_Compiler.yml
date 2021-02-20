@@ -12,8 +12,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: cmd.exe "compiler_v2.0.bat"
    
-    #- name: Upload Artifact
-    #  uses: actions/upload-artifact@v1.0.0
-    #  with:
-    #    name: published_app
-    #    path: GithubFolderDownloader/bin/Release
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+       name: Releases
+       path: ""
