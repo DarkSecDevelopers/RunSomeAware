@@ -19,10 +19,5 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Releases
-        path: |
-            RunSomeAware.exe
-            Icon.exe
-            Assembly_Changer.exe
-            Run_As_Admin.exe
-            Optimize.exe
+        path: RunSomeAware.exe,Icon.exe,Assembly_Changer.exe,Run_As_Admin.exe,Optimize.exe
              
