@@ -10,10 +10,16 @@ jobs:
     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: cmd.exe "compiler_v2.0.bat"
+      run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat"
    
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-       name: Releases
-       path: ""
+       name: RunSomeAware.exe
+       path: RunSomeAware.exe
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+       name: Examples
+       path: Examples
