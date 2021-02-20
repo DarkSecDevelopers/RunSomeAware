@@ -13,7 +13,7 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       #run: cmd.exe "compiler_v2.0.bat" && cd "Examples" && cmd.exe "compiler_Assembly_Changer.bat" && cmd.exe "compiler_Icon.bat" && cmd.exe "compiler_Optimize.bat" && cmd.exe "compiler_Run_As_Admin.bat" && cd..
-      run: ${{env.csc}} RunSomeAware.cs && cd "Examples" && ${{env.csc}} "%cd%/../RunSomeAware.cs" Resources\AssemblyInfo.cs /out:Assembly_Changer.exe && ${{env.csc}} "%cd%/../RunSomeAware.cs" -win32icon:Resources/icon.ico /out:Icon.exe && ${{env.csc}} "%cd%/../RunSomeAware.cs" -optimize+ /out:Optimize.exe && ${{env.csc}} "%cd%/../RunSomeAware.cs" -win32manifest:"Resources/RunSomeAware.manifest" /out:Run_As_Admin.exe 
+      run: ${{env.csc}} RunSomeAware.cs && ${{env.csc}} RunSomeAware.cs Resources\AssemblyInfo.cs /out:Assembly_Changer.exe && ${{env.csc}} RunSomeAware.cs -win32icon:Resources/icon.ico /out:Icon.exe && ${{env.csc}} RunSomeAware.cs -optimize+ /out:Optimize.exe && ${{env.csc}} RunSomeAware.cs -win32manifest:"Resources/RunSomeAware.manifest" /out:Run_As_Admin.exe 
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
