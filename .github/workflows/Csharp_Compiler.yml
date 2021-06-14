@@ -16,7 +16,7 @@ jobs:
       run: mkdir RunSomeAware_Releases && ${{env.csc}} /out:RunSomeAware_Releases/RunSomeAware.exe RunSomeAware.cs && ${{env.csc}} /out:RunSomeAware_Releases/Assembly_Changer.exe RunSomeAware.cs Examples\Resources\AssemblyInfo.cs  && ${{env.csc}} /out:RunSomeAware_Releases/Icon.exe -win32icon:Examples\Resources/icon.ico RunSomeAware.cs  && ${{env.csc}} /out:RunSomeAware_Releases/Optimize.exe -optimize+ RunSomeAware.cs   && ${{env.csc4}} /out:RunSomeAware_Releases/Run_As_Admin.exe -win32manifest:"Examples\Resources/RunSomeAware.manifest" RunSomeAware.cs   
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v2
       with:
        name: Releases
        path: '**/*.exe'
