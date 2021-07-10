@@ -57,12 +57,18 @@ You can contribute by using, reporting etc. You are always welcome so never fear
 <br>Before reporting any bug, verify that it does found on latest release and not listed on <a href="issues">issues</a>.
 </p>
 <h2> Tutorial</h2>
+<b> Esgeeks</b>
 
-Someone had made video which has good quality which I didn't hoped. lol. Thanks to him
-He used 
+Video: https://www.instagram.com/p/CKHO7GiAIbM/
+
+Article: https://esgeeks.com/runsomeaware-ransomware-prueba-concepto/
+
+<b> Youtube</b>
+
+In video, author used 
 - file pumper (to increase file size and defender become ddos and prevented scan)
 - compressor (when file having alot `00` values then duplicate characters compress well)
-
+ 
 Visit : https://youtu.be/Ny6RsSataAs
 
 <h2> Disclaimer</h2>
